@@ -5,7 +5,7 @@ const initServer = async () => {
 	const server = hapi.server(
 		{
 			port: 80,
-			host: '127.0.0.1',
+			host: process.env.NODE_ENV !== 'production' ? '127.0.0.1' : '0.0.0.0',
 		},
 	);
 
